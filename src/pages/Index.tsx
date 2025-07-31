@@ -40,21 +40,21 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-secondary/10">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b">
+      <nav className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b animate-slide-up">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/img/d25cf3cc-fbe6-41f3-aeca-9cf3f8f9f5b5.jpg" alt="FixedMods" className="w-10 h-10 rounded-lg" />
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <img src="/img/d25cf3cc-fbe6-41f3-aeca-9cf3f8f9f5b5.jpg" alt="FixedMods" className="w-10 h-10 rounded-lg animate-bounce-in hover:animate-rotate-y" />
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-slide-left">
               FixedMods
             </h1>
           </div>
           <div className="hidden md:flex items-center gap-6">
-            <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Возможности</a>
-            <a href="#guide" className="text-muted-foreground hover:text-foreground transition-colors">Руководство</a>
-            <a href="#support" className="text-muted-foreground hover:text-foreground transition-colors">Поддержка</a>
+            <a href="#features" className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110 hover:text-primary">Возможности</a>
+            <a href="#guide" className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110 hover:text-primary">Руководство</a>
+            <a href="#support" className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110 hover:text-primary">Поддержка</a>
             <Dialog>
               <DialogTrigger asChild>
-                <Button onClick={() => setIsDownloadOpen(true)}>Скачать</Button>
+                <Button onClick={() => setIsDownloadOpen(true)} className="hover:animate-pulse-scale transition-all duration-300 hover:shadow-lg hover:shadow-primary/25">Скачать</Button>
               </DialogTrigger>
             </Dialog>
           </div>
@@ -65,26 +65,26 @@ export default function Index() {
       <section className="pt-20 pb-16 px-4">
         <div className="container mx-auto text-center">
           <div className="animate-fade-in">
-            <Badge className="mb-6 bg-gradient-to-r from-primary to-secondary text-white">
+            <Badge className="mb-6 bg-gradient-to-r from-primary to-secondary text-white animate-bounce-in hover:animate-glow">
               Бесплатно навсегда
             </Badge>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-slide-up hover:animate-float">
               FixedMods
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: '0.2s'}}>
               Умная программа для исправления и оптимизации Minecraft модов. 
               Проверка совместимости, исправление ошибок, удаление дубликатов и устаревших модов.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Dialog open={isDownloadOpen} onOpenChange={setIsDownloadOpen}>
                 <DialogTrigger asChild>
-                  <Button size="lg" className="text-lg px-8 py-4 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90">
+                  <Button size="lg" className="text-lg px-8 py-4 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 animate-bounce-in hover:animate-glow hover:scale-105 transition-all duration-300" style={{animationDelay: '0.4s'}}>
                     <Icon name="Download" className="mr-2" />
                     Скачать FixedMods
                   </Button>
                 </DialogTrigger>
               </Dialog>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-4">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-4 animate-bounce-in hover:scale-105 hover:border-primary/50 transition-all duration-300" style={{animationDelay: '0.6s'}}>
                 <Icon name="Play" className="mr-2" />
                 Посмотреть демо
               </Button>
@@ -104,10 +104,10 @@ export default function Index() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="animate-scale-in hover:scale-105 transition-transform duration-300">
+            <Card className="animate-scale-in hover:scale-105 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 group" style={{animationDelay: '0.1s'}}>
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4">
-                  <Icon name="Settings" className="text-white" />
+                <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4 group-hover:animate-float">
+                  <Icon name="Settings" className="text-white group-hover:animate-pulse" />
                 </div>
                 <CardTitle>Проверка совместимости</CardTitle>
                 <CardDescription>
@@ -116,10 +116,10 @@ export default function Index() {
               </CardHeader>
             </Card>
 
-            <Card className="animate-scale-in hover:scale-105 transition-transform duration-300">
+            <Card className="animate-scale-in hover:scale-105 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 group" style={{animationDelay: '0.1s'}}>
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4">
-                  <Icon name="Shield" className="text-white" />
+                <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4 group-hover:animate-float">
+                  <Icon name="Shield" className="text-white group-hover:animate-pulse" />
                 </div>
                 <CardTitle>Исправление ошибок</CardTitle>
                 <CardDescription>
@@ -128,10 +128,10 @@ export default function Index() {
               </CardHeader>
             </Card>
 
-            <Card className="animate-scale-in hover:scale-105 transition-transform duration-300">
+            <Card className="animate-scale-in hover:scale-105 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 group" style={{animationDelay: '0.1s'}}>
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4">
-                  <Icon name="Bug" className="text-white" />
+                <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4 group-hover:animate-float">
+                  <Icon name="Bug" className="text-white group-hover:animate-pulse" />
                 </div>
                 <CardTitle>Удаление дубликатов</CardTitle>
                 <CardDescription>
@@ -140,10 +140,10 @@ export default function Index() {
               </CardHeader>
             </Card>
 
-            <Card className="animate-scale-in hover:scale-105 transition-transform duration-300">
+            <Card className="animate-scale-in hover:scale-105 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 group" style={{animationDelay: '0.1s'}}>
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4">
-                  <Icon name="Zap" className="text-white" />
+                <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4 group-hover:animate-float">
+                  <Icon name="Zap" className="text-white group-hover:animate-pulse" />
                 </div>
                 <CardTitle>Обновление модов</CardTitle>
                 <CardDescription>
@@ -152,10 +152,10 @@ export default function Index() {
               </CardHeader>
             </Card>
 
-            <Card className="animate-scale-in hover:scale-105 transition-transform duration-300">
+            <Card className="animate-scale-in hover:scale-105 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 group" style={{animationDelay: '0.1s'}}>
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4">
-                  <Icon name="Users" className="text-white" />
+                <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4 group-hover:animate-float">
+                  <Icon name="Users" className="text-white group-hover:animate-pulse" />
                 </div>
                 <CardTitle>База данных модов</CardTitle>
                 <CardDescription>
@@ -164,10 +164,10 @@ export default function Index() {
               </CardHeader>
             </Card>
 
-            <Card className="animate-scale-in hover:scale-105 transition-transform duration-300">
+            <Card className="animate-scale-in hover:scale-105 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 group" style={{animationDelay: '0.1s'}}>
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4">
-                  <Icon name="Wrench" className="text-white" />
+                <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4 group-hover:animate-float">
+                  <Icon name="Wrench" className="text-white group-hover:animate-pulse" />
                 </div>
                 <CardTitle>Резервное копирование</CardTitle>
                 <CardDescription>
@@ -191,8 +191,8 @@ export default function Index() {
           
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center animate-fade-in">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+              <div className="text-center animate-fade-in group" style={{animationDelay: '0.2s'}}>
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold group-hover:animate-bounce-in hover:shadow-lg hover:shadow-primary/25">
                   1
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Укажите папку с модами</h3>
@@ -201,8 +201,8 @@ export default function Index() {
                 </p>
               </div>
               
-              <div className="text-center animate-fade-in">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+              <div className="text-center animate-fade-in group" style={{animationDelay: '0.4s'}}>
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold group-hover:animate-bounce-in hover:shadow-lg hover:shadow-primary/25">
                   2
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Проанализируйте моды</h3>
@@ -211,8 +211,8 @@ export default function Index() {
                 </p>
               </div>
               
-              <div className="text-center animate-fade-in">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+              <div className="text-center animate-fade-in group" style={{animationDelay: '0.6s'}}>
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold group-hover:animate-bounce-in hover:shadow-lg hover:shadow-primary/25">
                   3
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Исправьте проблемы</h3>
@@ -292,7 +292,7 @@ export default function Index() {
           </p>
           <Dialog open={isDownloadOpen} onOpenChange={setIsDownloadOpen}>
             <DialogTrigger asChild>
-              <Button size="lg" variant="secondary" className="text-lg px-8 py-4">
+              <Button size="lg" variant="secondary" className="text-lg px-8 py-4 animate-bounce-in hover:animate-glow hover:scale-105 transition-all duration-300">
                 <Icon name="Download" className="mr-2" />
                 Скачать FixedMods бесплатно
               </Button>
