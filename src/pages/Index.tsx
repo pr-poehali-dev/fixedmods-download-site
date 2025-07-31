@@ -2,9 +2,41 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import Icon from "@/components/ui/icon";
+import { useState } from "react";
 
 export default function Index() {
+  const [isDownloadOpen, setIsDownloadOpen] = useState(false);
+
+  const downloadOptions = [
+    {
+      category: "Desktop",
+      platforms: [
+        { name: "Windows", icon: "Monitor", version: "64-bit / 32-bit", size: "45 MB" },
+        { name: "macOS", icon: "Apple", version: "Intel / Apple Silicon", size: "42 MB" },
+        { name: "Linux", icon: "Terminal", version: "AppImage / DEB / RPM", size: "38 MB" },
+        { name: "Ubuntu", icon: "Package", version: "20.04+", size: "38 MB" },
+        { name: "Arch Linux", icon: "Box", version: "AUR Package", size: "38 MB" },
+        { name: "Fedora", icon: "Package2", version: "35+", size: "38 MB" }
+      ]
+    },
+    {
+      category: "Mobile",
+      platforms: [
+        { name: "Android", icon: "Smartphone", version: "8.0+", size: "25 MB" },
+        { name: "iOS", icon: "Apple", version: "14.0+", size: "28 MB" }
+      ]
+    },
+    {
+      category: "Portable",
+      platforms: [
+        { name: "Portable Windows", icon: "FolderOpen", version: "No install", size: "52 MB" },
+        { name: "Web Version", icon: "Globe", version: "Browser", size: "Online" }
+      ]
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-secondary/10">
       {/* Navigation */}
@@ -20,7 +52,11 @@ export default function Index() {
             <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Возможности</a>
             <a href="#guide" className="text-muted-foreground hover:text-foreground transition-colors">Руководство</a>
             <a href="#support" className="text-muted-foreground hover:text-foreground transition-colors">Поддержка</a>
-            <Button>Скачать</Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button onClick={() => setIsDownloadOpen(true)}>Скачать</Button>
+              </DialogTrigger>
+            </Dialog>
           </div>
         </div>
       </nav>
@@ -40,10 +76,14 @@ export default function Index() {
               Проверка совместимости, исправление ошибок, удаление дубликатов и устаревших модов.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-4 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90">
-                <Icon name="Download" className="mr-2" />
-                Скачать FixedMods
-              </Button>
+              <Dialog open={isDownloadOpen} onOpenChange={setIsDownloadOpen}>
+                <DialogTrigger asChild>
+                  <Button size="lg" className="text-lg px-8 py-4 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90">
+                    <Icon name="Download" className="mr-2" />
+                    Скачать FixedMods
+                  </Button>
+                </DialogTrigger>
+              </Dialog>
               <Button size="lg" variant="outline" className="text-lg px-8 py-4">
                 <Icon name="Play" className="mr-2" />
                 Посмотреть демо
@@ -250,10 +290,14 @@ export default function Index() {
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Присоединяйтесь к тысячам игроков, которые уже используют FixedMods для стабильной игры
           </p>
-          <Button size="lg" variant="secondary" className="text-lg px-8 py-4">
-            <Icon name="Download" className="mr-2" />
-            Скачать FixedMods бесплатно
-          </Button>
+          <Dialog open={isDownloadOpen} onOpenChange={setIsDownloadOpen}>
+            <DialogTrigger asChild>
+              <Button size="lg" variant="secondary" className="text-lg px-8 py-4">
+                <Icon name="Download" className="mr-2" />
+                Скачать FixedMods бесплатно
+              </Button>
+            </DialogTrigger>
+          </Dialog>
         </div>
       </section>
 
@@ -282,6 +326,81 @@ export default function Index() {
           </div>
         </div>
       </footer>
+
+      {/* Download Modal */}
+      <Dialog open={isDownloadOpen} onOpenChange={setIsDownloadOpen}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Скачать FixedMods
+            </DialogTitle>
+            <DialogDescription className="text-center text-muted-foreground">
+              Выберите версию для вашей операционной системы
+            </DialogDescription>
+          </DialogHeader>
+          
+          <div className="space-y-6 mt-6">
+            {downloadOptions.map((category) => (
+              <div key={category.category} className="space-y-4">
+                <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
+                  <Icon name={category.category === "Desktop" ? "Monitor" : category.category === "Mobile" ? "Smartphone" : "Package"} className="w-5 h-5" />
+                  {category.category}
+                </h3>
+                
+                <div className="grid md:grid-cols-2 gap-3">
+                  {category.platforms.map((platform) => (
+                    <Card key={platform.name} className="hover:shadow-md transition-shadow cursor-pointer group">
+                      <CardContent className="p-4">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center group-hover:from-primary/30 group-hover:to-secondary/30 transition-colors">
+                              <Icon name={platform.icon} className="w-5 h-5 text-primary" />
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-foreground">{platform.name}</h4>
+                              <p className="text-sm text-muted-foreground">{platform.version}</p>
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-sm font-medium text-foreground">{platform.size}</div>
+                            <Button size="sm" className="mt-1 h-7 px-3 text-xs">
+                              <Icon name="Download" className="w-3 h-3 mr-1" />
+                              Скачать
+                            </Button>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-6 p-4 bg-muted/50 rounded-lg">
+            <div className="flex items-start gap-3">
+              <Icon name="Info" className="w-5 h-5 text-primary mt-0.5" />
+              <div className="text-sm text-muted-foreground">
+                <p className="font-medium text-foreground mb-1">Системные требования:</p>
+                <p>• Java 8+ для всех платформ</p>
+                <p>• Minecraft 1.16+ установлен</p>
+                <p>• 2 ГБ свободного места на диске</p>
+                <p>• Интернет для проверки обновлений модов</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="flex items-center justify-center gap-4 mt-4 pt-4 border-t">
+            <Button variant="outline" onClick={() => setIsDownloadOpen(false)}>
+              Закрыть
+            </Button>
+            <Button className="bg-gradient-to-r from-primary to-secondary">
+              <Icon name="ExternalLink" className="w-4 h-4 mr-2" />
+              Открыть в GitHub
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
