@@ -11,7 +11,7 @@ export default function Index() {
       <nav className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/img/d1d9b660-d385-4958-82ac-f3b49a5e8060.jpg" alt="FixedMods" className="w-10 h-10 rounded-lg" />
+            <img src="/img/d25cf3cc-fbe6-41f3-aeca-9cf3f8f9f5b5.jpg" alt="FixedMods" className="w-10 h-10 rounded-lg" />
             <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               FixedMods
             </h1>
@@ -36,8 +36,8 @@ export default function Index() {
               FixedMods
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Мощная бесплатная программа для модификации игр. 
-              Простая установка, безопасное использование, неограниченные возможности.
+              Умная программа для исправления и оптимизации Minecraft модов. 
+              Проверка совместимости, исправление ошибок, удаление дубликатов и устаревших модов.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8 py-4 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90">
@@ -59,7 +59,7 @@ export default function Index() {
           <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-4xl font-bold mb-4">Возможности</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Всё необходимое для модификации игр в одной программе
+              Профессиональные инструменты для работы с Minecraft модами
             </p>
           </div>
           
@@ -69,9 +69,9 @@ export default function Index() {
                 <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4">
                   <Icon name="Settings" className="text-white" />
                 </div>
-                <CardTitle>Простая настройка</CardTitle>
+                <CardTitle>Проверка совместимости</CardTitle>
                 <CardDescription>
-                  Интуитивный интерфейс позволяет настроить любые моды за несколько кликов
+                  Автоматический анализ конфликтов между модами и предложение решений
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -81,9 +81,9 @@ export default function Index() {
                 <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4">
                   <Icon name="Shield" className="text-white" />
                 </div>
-                <CardTitle>Безопасность</CardTitle>
+                <CardTitle>Исправление ошибок</CardTitle>
                 <CardDescription>
-                  Автоматическое резервное копирование и проверка файлов на вирусы
+                  Диагностика и автоматическое исправление проблем в файлах модов
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -91,11 +91,11 @@ export default function Index() {
             <Card className="animate-scale-in hover:scale-105 transition-transform duration-300">
               <CardHeader>
                 <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4">
-                  <Icon name="Gamepad2" className="text-white" />
+                  <Icon name="Bug" className="text-white" />
                 </div>
-                <CardTitle>Поддержка игр</CardTitle>
+                <CardTitle>Удаление дубликатов</CardTitle>
                 <CardDescription>
-                  Совместимость с 1000+ популярных игр и автоматическое обнаружение
+                  Поиск и удаление повторяющихся модов для оптимизации производительности
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -105,9 +105,9 @@ export default function Index() {
                 <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4">
                   <Icon name="Zap" className="text-white" />
                 </div>
-                <CardTitle>Быстрая установка</CardTitle>
+                <CardTitle>Обновление модов</CardTitle>
                 <CardDescription>
-                  Установка модов одним кликом с автоматическим разрешением конфликтов
+                  Автоматическое обнаружение устаревших модов и обновление до новых версий
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -117,9 +117,9 @@ export default function Index() {
                 <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4">
                   <Icon name="Users" className="text-white" />
                 </div>
-                <CardTitle>Сообщество</CardTitle>
+                <CardTitle>База данных модов</CardTitle>
                 <CardDescription>
-                  Доступ к библиотеке модов от сообщества и встроенный обмен файлами
+                  Встроенная база данных с информацией о совместимости тысяч Minecraft модов
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -129,9 +129,9 @@ export default function Index() {
                 <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4">
                   <Icon name="Wrench" className="text-white" />
                 </div>
-                <CardTitle>Расширенные настройки</CardTitle>
+                <CardTitle>Резервное копирование</CardTitle>
                 <CardDescription>
-                  Тонкая настройка параметров для опытных пользователей
+                  Автоматическое создание резервных копий перед внесением изменений
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -145,7 +145,7 @@ export default function Index() {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Руководство</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Начните использовать FixedMods за 3 простых шага
+              Оптимизируйте свои Minecraft моды за 3 простых шага
             </p>
           </div>
           
@@ -155,9 +155,9 @@ export default function Index() {
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
                   1
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Скачайте программу</h3>
+                <h3 className="text-xl font-semibold mb-2">Укажите папку с модами</h3>
                 <p className="text-muted-foreground">
-                  Загрузите FixedMods с нашего сайта и запустите установщик
+                  Выберите папку mods вашего Minecraft и запустите сканирование
                 </p>
               </div>
               
@@ -165,9 +165,9 @@ export default function Index() {
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
                   2
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Выберите игру</h3>
+                <h3 className="text-xl font-semibold mb-2">Проанализируйте моды</h3>
                 <p className="text-muted-foreground">
-                  Программа автоматически найдёт все поддерживаемые игры на вашем ПК
+                  FixedMods проверит совместимость и найдёт проблемы в ваших модах
                 </p>
               </div>
               
@@ -175,9 +175,9 @@ export default function Index() {
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
                   3
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Установите моды</h3>
+                <h3 className="text-xl font-semibold mb-2">Исправьте проблемы</h3>
                 <p className="text-muted-foreground">
-                  Выберите нужные моды и нажмите "Установить" - всё остальное сделает программа
+                  Одним кликом исправьте ошибки, удалите дубликаты и обновите устаревшие моды
                 </p>
               </div>
             </div>
@@ -199,31 +199,31 @@ export default function Index() {
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-left">
-                  Безопасно ли использовать FixedMods для модификации игр?
+                  Безопасно ли использовать FixedMods для работы с Minecraft модами?
                 </AccordionTrigger>
                 <AccordionContent>
-                  Да, FixedMods полностью безопасен. Программа создаёт резервные копии всех изменяемых файлов 
-                  и проверяет все моды на наличие вредоносного кода перед установкой.
+                  Да, FixedMods полностью безопасен. Программа создаёт резервные копии всех файлов 
+                  перед внесением изменений и использует только проверенные методы исправления.
                 </AccordionContent>
               </AccordionItem>
               
               <AccordionItem value="item-2">
                 <AccordionTrigger className="text-left">
-                  Какие игры поддерживает FixedMods?
+                  Какие версии Minecraft поддерживает FixedMods?
                 </AccordionTrigger>
                 <AccordionContent>
-                  FixedMods поддерживает более 1000 популярных игр, включая GTA, Skyrim, Minecraft, Fallout, 
-                  Call of Duty и многие другие. Список постоянно обновляется.
+                  FixedMods поддерживает все популярные версии Minecraft: 1.16, 1.17, 1.18, 1.19, 1.20 и новее, 
+                  включая Forge, Fabric и Quilt модлоадеры.
                 </AccordionContent>
               </AccordionItem>
               
               <AccordionItem value="item-3">
                 <AccordionTrigger className="text-left">
-                  Можно ли откатить изменения после установки модов?
+                  Можно ли откатить изменения после исправления модов?
                 </AccordionTrigger>
                 <AccordionContent>
-                  Конечно! FixedMods автоматически создаёт точки восстановления перед каждой установкой. 
-                  Вы можете в любой момент откатить изменения одним кликом.
+                  Конечно! FixedMods автоматически создаёт резервные копии перед каждым исправлением. 
+                  Вы можете в любой момент восстановить оригинальные файлы одним кликом.
                 </AccordionContent>
               </AccordionItem>
               
@@ -245,10 +245,10 @@ export default function Index() {
       <section className="py-16 px-4 bg-gradient-to-r from-primary to-secondary">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Готовы начать модификацию игр?
+            Готовы оптимизировать свои Minecraft моды?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Присоединяйтесь к миллионам геймеров, которые уже используют FixedMods
+            Присоединяйтесь к тысячам игроков, которые уже используют FixedMods для стабильной игры
           </p>
           <Button size="lg" variant="secondary" className="text-lg px-8 py-4">
             <Icon name="Download" className="mr-2" />
@@ -262,7 +262,7 @@ export default function Index() {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center gap-3 mb-4 md:mb-0">
-              <img src="/img/d1d9b660-d385-4958-82ac-f3b49a5e8060.jpg" alt="FixedMods" className="w-8 h-8 rounded" />
+              <img src="/img/d25cf3cc-fbe6-41f3-aeca-9cf3f8f9f5b5.jpg" alt="FixedMods" className="w-8 h-8 rounded" />
               <span className="text-xl font-bold">FixedMods</span>
             </div>
             <div className="flex items-center gap-6">
@@ -278,7 +278,7 @@ export default function Index() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t text-center text-muted-foreground">
-            <p>&copy; 2024 FixedMods. Все права защищены. Бесплатная программа для модификации игр.</p>
+            <p>&copy; 2024 FixedMods. Все права защищены. Бесплатная программа для оптимизации Minecraft модов.</p>
           </div>
         </div>
       </footer>
