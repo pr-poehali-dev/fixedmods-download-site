@@ -43,7 +43,7 @@ export default function Index() {
       <nav className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b animate-slide-up">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/img/d25cf3cc-fbe6-41f3-aeca-9cf3f8f9f5b5.jpg" alt="FixedMods" className="w-10 h-10 rounded-lg animate-bounce-in hover:animate-rotate-y" />
+            <img src="/img/840470ea-e4dc-4289-81fc-eaee3a41038a.jpg" alt="FixedMods" className="w-10 h-10 rounded-lg animate-bounce-in hover:animate-rotate-y" />
             <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-slide-left">
               FixedMods
             </h1>
@@ -306,7 +306,7 @@ export default function Index() {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center gap-3 mb-4 md:mb-0">
-              <img src="/img/d25cf3cc-fbe6-41f3-aeca-9cf3f8f9f5b5.jpg" alt="FixedMods" className="w-8 h-8 rounded" />
+              <img src="/img/840470ea-e4dc-4289-81fc-eaee3a41038a.jpg" alt="FixedMods" className="w-8 h-8 rounded" />
               <span className="text-xl font-bold">FixedMods</span>
             </div>
             <div className="flex items-center gap-6">
